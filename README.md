@@ -9,20 +9,15 @@ Mobile money is popular in Malawi for paying for things like utilities,
 TV subscriptions, even Insurance. Why can't we use these platforms to pay for 
 things online so that more Malawian startups can offer their products online?
 
-Dommo tries to address this problem by requiring users to request verification
-of their offline payments from "Merchants" via a simple form. Merchants aka 
-administrators of online platforms then perform verification of payments via a 
-simple user interface to complete the purchase.
-
-We know, not as sexy as the flow for paying via Stripe, PayPal or VISA but it's something.
-
-The ultimate goal is to inspire Mobile Money vendors to provide online APIs themselves
-to make the process more fluid.
+Dommo tries to address this problem by verifying Payments via a simple form.
  
 Essentially, once a user pays via Mobile Money they will fill the Dommo form to
- send the transaction reference information to be verifed by the Merchant/Service Provider.
-When the merchant/service provider verifies they will mark it as verified (via a UI).
-Once this happens the user is notified via E-mail or SMS that their transaction was successful.
+send the transaction reference information to be verifed by the merchant/service provider.
+Once the merchant/service provider verifies the Payment via the Dommo Dashboard or API (coming soon) the user is notified via E-mail or SMS that their transaction was successful.
+
+We know it's not as sexy as the flow for paying via Stripe, PayPal or VISA 
+but it's a start. The ultimate goal is to inspire Mobile Money vendors to 
+provide online payment APIs themselves to make the process more fluid.
 
 **Prior art?**
 
@@ -32,16 +27,20 @@ in their own systems.
 
 ## Tech Stack
 
+
 The following make this thing work:
 
 * Java 14
 * Sparkjava
 * Gson
-* Active Persistence for database
-* Yavi for validation
 * Postgres
 * VueJS for UI (with Vue CLI)
 * golang-migrate/migrate
+* [*Yavi](https://github.com/making/yavi) for validation
+* [*Active Persistence](https://github.com/lazaronixon/active-persistence/) (evaluating it)
+
+<small>An innovative solution needs a bleeding edge stack, right? ;)</small>
+
 
 ## Building
 
