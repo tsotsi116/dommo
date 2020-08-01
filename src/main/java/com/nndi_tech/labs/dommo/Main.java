@@ -1,6 +1,7 @@
 package com.nndi_tech.labs.dommo;
 
 import com.google.gson.Gson;
+import com.nndi_tech.labs.dommo.routes.MpambaTransactionRoute;
 import com.nndi_tech.labs.dommo.routes.RequestMobileMoneyPaymentVerificationRoute;
 import com.nndi_tech.labs.dommo.routes.VerifyMobileMoneyPaymentByTxn;
 import org.slf4j.LoggerFactory;
@@ -76,6 +77,9 @@ public class Main {
         // TODO: Spark.get("/verifications/pending", (request, response) -> "Not Implemented");
         // TODO: Spark.get("/verifications/verified", (request, response) -> "Not Implemented");
         // TODO: Spark.get("/verifications/cancelled", (request, response) -> "Not Implemented");
+
+        Spark.post("/mpamba-transaction/:type", new MpambaTransactionRoute());
+        Spark.post("/mpamba-transaction/:type", new MpambaTransactionRoute());
 
         LoggerFactory.getLogger(Main.class).info("========== API RUNNING =================");
     }
